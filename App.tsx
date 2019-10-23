@@ -3,8 +3,8 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import AppNavigator from "./AppNavigator";
-import images from "./images";
+import AppNavigator from "./constants/AppNavigator";
+import images from "./constants/images";
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
