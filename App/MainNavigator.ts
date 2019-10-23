@@ -1,6 +1,6 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
-import GetStarted from "../screens/GetStarted";
-import SignIn from "../screens/SignIn";
+import GetStarted from "./screens/GetStarted";
+import SignIn from "./screens/SignIn";
 
 const PushRouteOne = createStackNavigator(
   {

@@ -1,6 +1,6 @@
 import { createBrowserApp } from "@react-navigation/web";
 import { createSwitchNavigator } from "react-navigation";
-import MainNavigator from "./MainNavigator";
+import MainNavigator from "./App/MainNavigator";
 
 const switchNavigator: any = createSwitchNavigator({
   Main: MainNavigator
