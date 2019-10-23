@@ -4,7 +4,7 @@ import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import images from "./images";
-import AppNavigator from "./src/navigation/AppNavigator";
+import AppNavigator from "./navigation/AppNavigator";
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
