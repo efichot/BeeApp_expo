@@ -11,17 +11,21 @@ import {
 } from "react-native";
 import { useNavigation } from "react-navigation-hooks";
 
-const SignIn = () => {
+const SignUp = () => {
   const { navigate } = useNavigation();
   const appLogoViewScale = new Animated.Value(-1);
-  const btnSignInButtonTranslateY = new Animated.Value(-1);
-  const btnSignInButtonOpacity = new Animated.Value(-1);
-  const emailAddressViewTranslateY = new Animated.Value(-1);
-  const emailAddressViewOpacity = new Animated.Value(-1);
+  const usernameViewTranslateY = new Animated.Value(-1);
+  const usernameViewOpacity = new Animated.Value(-1);
   const passwordViewTranslateY = new Animated.Value(-1);
   const passwordViewOpacity = new Animated.Value(-1);
+  const emailAddressViewTranslateY = new Animated.Value(-1);
+  const emailAddressViewOpacity = new Animated.Value(-1);
   const btnSignUpButtonTranslateY = new Animated.Value(-1);
   const btnSignUpButtonOpacity = new Animated.Value(-1);
+  const btnSignInButtonTranslateY = new Animated.Value(-1);
+  const btnSignInButtonOpacity = new Animated.Value(-1);
+  const btnSignUpWithGoogleButtonTranslateY = new Animated.Value(-1);
+  const btnSignUpWithGoogleButtonOpacity = new Animated.Value(-1);
 
   useEffect(() => {
     startAnimationOne();
@@ -32,20 +36,26 @@ const SignIn = () => {
   };
 
   const onBtnGetStartedTwoPressed = () => {
-    navigate("SignUp");
+    navigate("SignIn");
   };
+
+  const onBtnGetStartedThreePressed = () => {};
 
   const startAnimationOne = () => {
     // Set animation initial values to all animated properties
     appLogoViewScale.setValue(0);
-    emailAddressViewTranslateY.setValue(0);
-    emailAddressViewOpacity.setValue(0);
+    usernameViewTranslateY.setValue(0);
+    usernameViewOpacity.setValue(0);
     passwordViewTranslateY.setValue(0);
     passwordViewOpacity.setValue(0);
-    btnSignInButtonTranslateY.setValue(0);
-    btnSignInButtonOpacity.setValue(0);
+    emailAddressViewTranslateY.setValue(0);
+    emailAddressViewOpacity.setValue(0);
     btnSignUpButtonTranslateY.setValue(0);
     btnSignUpButtonOpacity.setValue(0);
+    btnSignInButtonTranslateY.setValue(0);
+    btnSignInButtonOpacity.setValue(0);
+    btnSignUpWithGoogleButtonTranslateY.setValue(0);
+    btnSignUpWithGoogleButtonOpacity.setValue(0);
 
     // Configure animation and trigger
     Animated.parallel([
@@ -57,12 +67,12 @@ const SignIn = () => {
         })
       ]),
       Animated.parallel([
-        Animated.timing(emailAddressViewTranslateY, {
+        Animated.timing(usernameViewTranslateY, {
           duration: 500,
           easing: Easing.bezier(0.42, 0, 0.58, 1),
           toValue: 1
         }),
-        Animated.timing(emailAddressViewOpacity, {
+        Animated.timing(usernameViewOpacity, {
           duration: 500,
           easing: Easing.bezier(0.42, 0, 0.58, 1),
           toValue: 1
@@ -81,25 +91,49 @@ const SignIn = () => {
         })
       ]),
       Animated.parallel([
-        Animated.timing(btnSignInButtonTranslateY, {
-          duration: 1200,
+        Animated.timing(emailAddressViewTranslateY, {
+          duration: 1150,
           easing: Easing.bezier(0.42, 0, 0.58, 1),
           toValue: 1
         }),
-        Animated.timing(btnSignInButtonOpacity, {
-          duration: 1200,
+        Animated.timing(emailAddressViewOpacity, {
+          duration: 1150,
           easing: Easing.bezier(0.42, 0, 0.58, 1),
           toValue: 1
         })
       ]),
       Animated.parallel([
         Animated.timing(btnSignUpButtonTranslateY, {
-          duration: 1550,
+          duration: 1450,
           easing: Easing.bezier(0.42, 0, 0.58, 1),
           toValue: 1
         }),
         Animated.timing(btnSignUpButtonOpacity, {
-          duration: 1550,
+          duration: 1450,
+          easing: Easing.bezier(0.42, 0, 0.58, 1),
+          toValue: 1
+        })
+      ]),
+      Animated.parallel([
+        Animated.timing(btnSignInButtonTranslateY, {
+          duration: 1650,
+          easing: Easing.bezier(0.42, 0, 0.58, 1),
+          toValue: 1
+        }),
+        Animated.timing(btnSignInButtonOpacity, {
+          duration: 1650,
+          easing: Easing.bezier(0.42, 0, 0.58, 1),
+          toValue: 1
+        })
+      ]),
+      Animated.parallel([
+        Animated.timing(btnSignUpWithGoogleButtonTranslateY, {
+          duration: 1900,
+          easing: Easing.bezier(0.42, 0, 0.58, 1),
+          toValue: 1
+        }),
+        Animated.timing(btnSignUpWithGoogleButtonOpacity, {
+          duration: 1900,
           easing: Easing.bezier(0.42, 0, 0.58, 1),
           toValue: 1
         })
@@ -108,7 +142,7 @@ const SignIn = () => {
   };
 
   return (
-    <View style={styles.signInView}>
+    <View style={styles.signUpView}>
       <Animated.View
         style={[
           {
@@ -138,24 +172,24 @@ const SignIn = () => {
       <Animated.View
         style={[
           {
-            opacity: emailAddressViewOpacity.interpolate({
+            opacity: usernameViewOpacity.interpolate({
               inputRange: [-1, 0, 1],
               outputRange: [1, 0, 1]
             }),
             transform: [
               {
-                translateY: emailAddressViewTranslateY.interpolate({
+                translateY: usernameViewTranslateY.interpolate({
                   inputRange: [-1, 0, 1],
                   outputRange: [0.01, 200, 0]
                 })
               }
             ]
           },
-          styles.emailAddressViewAnimated
+          styles.usernameViewAnimated
         ]}
       >
-        <View style={styles.emailAddressView}>
-          <Text style={styles.emailAddressText}>Email Address</Text>
+        <View style={styles.usernameView}>
+          <Text style={styles.usernameText}>Username</Text>
           <View
             pointerEvents="box-none"
             style={{
@@ -167,8 +201,8 @@ const SignIn = () => {
             <View style={styles.rectangleView} />
             <TextInput
               autoCorrect={false}
-              placeholder="a@bcd.com"
-              style={styles.aBcdComTextInput}
+              placeholder="anggarisky"
+              style={styles.anggariskyTextInput}
             />
           </View>
         </View>
@@ -212,37 +246,49 @@ const SignIn = () => {
           </View>
         </View>
       </Animated.View>
-      <View
-        style={{
-          flex: 1
-        }}
-      />
       <Animated.View
         style={[
           {
-            opacity: btnSignInButtonOpacity.interpolate({
+            opacity: emailAddressViewOpacity.interpolate({
               inputRange: [-1, 0, 1],
               outputRange: [1, 0, 1]
             }),
             transform: [
               {
-                translateY: btnSignInButtonTranslateY.interpolate({
+                translateY: emailAddressViewTranslateY.interpolate({
                   inputRange: [-1, 0, 1],
                   outputRange: [0.01, 200, 0]
                 })
               }
             ]
           },
-          styles.btnSignInButtonAnimated
+          styles.emailAddressViewAnimated
         ]}
       >
-        <TouchableOpacity
-          onPress={onBtnGetStartedPressed}
-          style={styles.btnSignInButton}
-        >
-          <Text style={styles.btnSignInButtonText}>SIGN IN</Text>
-        </TouchableOpacity>
+        <View style={styles.emailAddressView}>
+          <Text style={styles.emailAddressText}>Email Address</Text>
+          <View
+            pointerEvents="box-none"
+            style={{
+              alignSelf: "stretch",
+              height: 45,
+              marginTop: 13
+            }}
+          >
+            <View style={styles.rectangleThreeView} />
+            <TextInput
+              autoCorrect={false}
+              placeholder="a@bcd.com"
+              style={styles.aBcdComTextInput}
+            />
+          </View>
+        </View>
       </Animated.View>
+      <View
+        style={{
+          flex: 1
+        }}
+      />
       <Animated.View
         style={[
           {
@@ -263,27 +309,86 @@ const SignIn = () => {
         ]}
       >
         <TouchableOpacity
-          onPress={onBtnGetStartedTwoPressed}
+          onPress={onBtnGetStartedPressed}
           style={styles.btnSignUpButton}
         >
           <Text style={styles.btnSignUpButtonText}>SIGN UP</Text>
+        </TouchableOpacity>
+      </Animated.View>
+      <Animated.View
+        style={[
+          {
+            opacity: btnSignInButtonOpacity.interpolate({
+              inputRange: [-1, 0, 1],
+              outputRange: [1, 0, 1]
+            }),
+            transform: [
+              {
+                translateY: btnSignInButtonTranslateY.interpolate({
+                  inputRange: [-1, 0, 1],
+                  outputRange: [0.01, 200, 0]
+                })
+              }
+            ]
+          },
+          styles.btnSignInButtonAnimated
+        ]}
+      >
+        <TouchableOpacity
+          onPress={onBtnGetStartedTwoPressed}
+          style={styles.btnSignInButton}
+        >
+          <Text style={styles.btnSignInButtonText}>SIGN IN</Text>
+        </TouchableOpacity>
+      </Animated.View>
+      <Animated.View
+        style={[
+          {
+            opacity: btnSignUpWithGoogleButtonOpacity.interpolate({
+              inputRange: [-1, 0, 1],
+              outputRange: [1, 0, 1]
+            }),
+            transform: [
+              {
+                translateY: btnSignUpWithGoogleButtonTranslateY.interpolate({
+                  inputRange: [-1, 0, 1],
+                  outputRange: [0.01, 200, 0]
+                })
+              }
+            ]
+          },
+          styles.btnSignUpWithGoogleButtonAnimated
+        ]}
+      >
+        <TouchableOpacity
+          onPress={onBtnGetStartedThreePressed}
+          style={styles.btnSignUpWithGoogleButton}
+        >
+          <Text style={styles.btnSignUpWithGoogleButtonText}>
+            SIGN UP WITH GOOGLE
+          </Text>
         </TouchableOpacity>
       </Animated.View>
     </View>
   );
 };
 
-SignIn.navigationOptions = {
+SignUp.navigationOptions = {
   header: null
 };
 
-export default SignIn;
+export default SignUp;
 
 const styles = StyleSheet.create({
-  signInView: {
+  signUpView: {
     backgroundColor: "rgb(27, 19, 62)",
     flex: 1,
     alignItems: "center"
+  },
+  appLogoView: {
+    backgroundColor: "transparent",
+    width: "100%",
+    height: "100%"
   },
   appLogoViewAnimated: {
     alignSelf: "flex-start",
@@ -292,14 +397,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginTop: 8
   },
-  appLogoView: {
-    backgroundColor: "transparent",
-    width: "100%",
-    height: "100%"
-  },
   rectangleCopy4Image: {
-    resizeMode: "center",
     backgroundColor: "transparent",
+    resizeMode: "center",
     position: "absolute",
     left: 0,
     right: -0,
@@ -307,23 +407,118 @@ const styles = StyleSheet.create({
     height: 60
   },
   rectangleImage: {
-    resizeMode: "center",
     backgroundColor: "transparent",
+    resizeMode: "center",
     position: "absolute",
     left: 0,
     right: 0,
     top: 0,
     height: 59
   },
+  usernameView: {
+    backgroundColor: "transparent",
+    width: "100%",
+    height: "100%",
+    alignItems: "flex-start"
+  },
+  usernameViewAnimated: {
+    width: 312,
+    height: 77,
+    marginTop: 68
+  },
+  usernameText: {
+    color: "white",
+    fontFamily: "Montserrat-Light",
+    fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "left",
+    backgroundColor: "transparent"
+  },
+  rectangleView: {
+    backgroundColor: "rgb(43, 32, 89)",
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: "rgb(92, 80, 144)",
+    borderStyle: "solid",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 45
+  },
+  anggariskyTextInput: {
+    color: "rgb(92, 80, 144)",
+    fontFamily: "Montserrat-Regular",
+    fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "left",
+    backgroundColor: "transparent",
+    padding: 0,
+    position: "absolute",
+    left: 13,
+    width: 286,
+    top: 13,
+    height: 19
+  },
+  passwordView: {
+    backgroundColor: "transparent",
+    width: "100%",
+    height: "100%",
+    alignItems: "flex-start"
+  },
+  passwordViewAnimated: {
+    width: 312,
+    height: 77,
+    marginTop: 30
+  },
+  passwordText: {
+    color: "white",
+    fontFamily: "Montserrat-Light",
+    fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "left",
+    backgroundColor: "transparent"
+  },
+  rectangleTwoView: {
+    backgroundColor: "rgb(43, 32, 89)",
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: "rgb(92, 80, 144)",
+    borderStyle: "solid",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 45
+  },
+  iscomicsansgoodTextInput: {
+    color: "rgb(92, 80, 144)",
+    fontFamily: "Montserrat-Regular",
+    fontSize: 16,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "left",
+    backgroundColor: "transparent",
+    padding: 0,
+    position: "absolute",
+    left: 13,
+    width: 287,
+    top: 13,
+    height: 19
+  },
   emailAddressView: {
     backgroundColor: "transparent",
     width: "100%",
-    height: "100%"
+    height: "100%",
+    alignItems: "flex-start"
   },
   emailAddressViewAnimated: {
     width: 312,
     height: 77,
-    marginTop: 194
+    marginTop: 30
   },
   emailAddressText: {
     color: "white",
@@ -332,10 +527,9 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "normal",
     textAlign: "left",
-    backgroundColor: "transparent",
-    alignSelf: "flex-start"
+    backgroundColor: "transparent"
   },
-  rectangleView: {
+  rectangleThreeView: {
     backgroundColor: "rgb(43, 32, 89)",
     borderRadius: 6,
     borderWidth: 1,
@@ -358,66 +552,15 @@ const styles = StyleSheet.create({
     padding: 0,
     position: "absolute",
     left: 13,
-    width: 293,
-    top: 13,
-    height: 19
-  },
-  passwordViewAnimated: {
-    width: 312,
-    height: 77,
-    marginTop: 15
-  },
-  passwordView: {
-    backgroundColor: "transparent",
-    width: "100%",
-    height: "100%",
-    alignItems: "flex-start"
-  },
-  passwordText: {
-    backgroundColor: "transparent",
-    color: "white",
-    fontFamily: "Montserrat-Light",
-    fontSize: 16,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "left"
-  },
-  rectangleTwoView: {
-    backgroundColor: "rgb(43, 32, 89)",
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: "rgb(92, 80, 144)",
-    borderStyle: "solid",
-    position: "absolute",
-    left: 0,
-    right: 0,
-    top: 0,
-    height: 45
-  },
-  iscomicsansgoodTextInput: {
-    backgroundColor: "transparent",
-    padding: 0,
-    color: "rgb(92, 80, 144)",
-    fontFamily: "Montserrat-Regular",
-    fontSize: 16,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "left",
-    position: "absolute",
-    left: 13,
     width: 291,
     top: 13,
     height: 19
   },
-  btnSignInButtonText: {
-    color: "white",
-    fontFamily: "Montserrat-Medium",
-    fontSize: 18,
-    fontStyle: "normal",
-    fontWeight: "normal",
-    textAlign: "center"
+  btnSignUpButtonImage: {
+    resizeMode: "contain",
+    marginRight: 10
   },
-  btnSignInButton: {
+  btnSignUpButton: {
     backgroundColor: "rgb(0, 145, 255)",
     borderRadius: 22.5,
     flexDirection: "row",
@@ -427,19 +570,10 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
-  btnSignInButtonImage: {
-    resizeMode: "contain",
-    marginRight: 10
-  },
-  btnSignInButtonAnimated: {
-    width: 270,
-    height: 45,
-    marginBottom: 6
-  },
   btnSignUpButtonAnimated: {
     width: 270,
     height: 45,
-    marginBottom: 19
+    marginBottom: 6
   },
   btnSignUpButtonText: {
     color: "white",
@@ -449,7 +583,7 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
     textAlign: "center"
   },
-  btnSignUpButton: {
+  btnSignInButton: {
     backgroundColor: "rgb(153, 161, 168)",
     borderRadius: 22.5,
     flexDirection: "row",
@@ -459,8 +593,48 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%"
   },
-  btnSignUpButtonImage: {
+  btnSignInButtonText: {
+    color: "white",
+    fontFamily: "Montserrat-Medium",
+    fontSize: 18,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "center"
+  },
+  btnSignInButtonAnimated: {
+    width: 270,
+    height: 45,
+    marginBottom: 6
+  },
+  btnSignInButtonImage: {
     resizeMode: "contain",
     marginRight: 10
+  },
+  btnSignUpWithGoogleButtonAnimated: {
+    width: 270,
+    height: 45,
+    marginBottom: 18
+  },
+  btnSignUpWithGoogleButtonText: {
+    color: "white",
+    fontFamily: "Montserrat-Medium",
+    fontSize: 18,
+    fontStyle: "normal",
+    fontWeight: "normal",
+    textAlign: "center"
+  },
+  btnSignUpWithGoogleButtonImage: {
+    resizeMode: "contain",
+    marginRight: 10
+  },
+  btnSignUpWithGoogleButton: {
+    backgroundColor: "rgb(255, 0, 76)",
+    borderRadius: 22.5,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 0,
+    width: "100%",
+    height: "100%"
   }
 });
