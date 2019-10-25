@@ -27,7 +27,7 @@ const SignIn = () => {
     startAnimationOne();
   }, []);
 
-  const onBtnGetStartedPressed = () => navigate("UntitledFour");
+  const onBtnGetStartedPressed = () => navigate("SuccessSignIn");
 
   const startAnimationOne = () => {
     // Set animation initial values to all animated properties

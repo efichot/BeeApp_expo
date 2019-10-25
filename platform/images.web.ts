@@ -1,3 +1,5 @@
+import "./global.css";
+
 function importAll(r) {
   return r.keys().map(r);
 }

@@ -1,6 +1,8 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
 import GetStarted from "./screens/GetStarted";
+import MyDashboard from "./screens/MyDashboard";
 import SignIn from "./screens/SignIn";
+import SuccessSignIn from "./screens/SuccessSignIn";
 
 const PushRouteOne = createStackNavigator(
   {
@@ -9,6 +11,9 @@ const PushRouteOne = createStackNavigator(
     },
     SignIn: {
       screen: SignIn
+    },
+    SuccessSignIn: {
+      screen: SuccessSignIn
     }
   },
   {
@@ -16,37 +21,34 @@ const PushRouteOne = createStackNavigator(
   }
 );
 
-// const PushRouteTwo = createStackNavigator(
-//   {
-//     UntitledFour: {
-//       screen: UntitledFour
-//     },
-//     UntitledTwo: {
-//       screen: UntitledTwo
-//     },
-//     Untitled: {
-//       screen: Untitled
-//     },
-//     UntitledSeven: {
-//       screen: UntitledSeven
-//     }
-//   },
-//   {
-//     initialRouteName: "UntitledFour"
-//   }
-// );
+const PushRouteTwo = createStackNavigator(
+  {
+    MyDashboard: {
+      screen: MyDashboard
+    }
+    // SendMoney: {
+    //   screen: SendMoney
+    // },
+    // Contacts: {
+    //   screen: Contacts
+    // }
+  },
+  {
+    initialRouteName: "MyDashboard"
+  }
+);
 
 // const PushRouteThree = createStackNavigator(
 //   {
-//     UntitledThree: {
-//       screen: UntitledThree
+//     SuccessSend: {
+//       screen: SuccessSend
 //     },
-//     UntitledTwo: {
-//       screen: UntitledTwo
+//     MyDashboard: {
+//       screen: MyDashboard
 //     }
 //   },
 //   {
-//     initialRouteName: "UntitledThree"
+//     initialRouteName: "SuccessSend"
 //   }
 // );
 
@@ -54,13 +56,13 @@ const RootNavigator = createStackNavigator(
   {
     PushRouteOne: {
       screen: PushRouteOne
+    },
+    PushRouteTwo: {
+      screen: PushRouteTwo
     }
-    // PushRouteTwo: {
-    //   screen: PushRouteTwo
-    // },
-    // PushRouteThree: {
-    //   screen: PushRouteThree
-    // }
+    //   PushRouteThree: {
+    //     screen: PushRouteThree
+    //   }
   },
   {
     mode: "modal",

@@ -3,7 +3,6 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import "./global.css";
 import AppNavigator from "./platform/AppNavigator";
 import images from "./platform/images";
 
