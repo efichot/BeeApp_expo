@@ -32,7 +32,10 @@ async function loadResourcesAsync() {
     Asset.loadAsync(images),
     Font.loadAsync({
       ".AppleSystemUIFont": require("./assets/fonts/SFNSText.ttf"),
-      ".SFNSDisplay": require("./assets/fonts/SFNSDisplay.ttf")
+      ".SFNSDisplay": require("./assets/fonts/SFNSDisplay.ttf"),
+      "Montserrat-Light": require("./assets/fonts/Montserrat-Light.ttf"),
+      "Montserrat-Medium": require("./assets/fonts/Montserrat-Medium.ttf"),
+      "Montserrat-Regular": require("./assets/fonts/Montserrat-Regular.ttf")
     })
   ]);
 }

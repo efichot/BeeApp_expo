@@ -1,11 +1,12 @@
 import { createAppContainer, createStackNavigator } from "react-navigation";
+import Contacts from "./screens/Contacts";
 import GetStarted from "./screens/GetStarted";
 import MyDashboard from "./screens/MyDashboard";
 import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
 import SuccessSignIn from "./screens/SuccessSignIn";
 
-const PushRouteOne = createStackNavigator(
+const RootNavigator = createStackNavigator(
   {
     GetStarted: {
       screen: GetStarted
@@ -18,60 +19,18 @@ const PushRouteOne = createStackNavigator(
     },
     SuccessSignIn: {
       screen: SuccessSignIn
-    }
-  },
-  {
-    initialRouteName: "GetStarted"
-  }
-);
-
-const PushRouteTwo = createStackNavigator(
-  {
+    },
     MyDashboard: {
       screen: MyDashboard
-    }
-    // SendMoney: {
-    //   screen: SendMoney
-    // },
-    // Contacts: {
-    //   screen: Contacts
-    // }
-  },
-  {
-    initialRouteName: "MyDashboard"
-  }
-);
-
-// const PushRouteThree = createStackNavigator(
-//   {
-//     SuccessSend: {
-//       screen: SuccessSend
-//     },
-//     MyDashboard: {
-//       screen: MyDashboard
-//     }
-//   },
-//   {
-//     initialRouteName: "SuccessSend"
-//   }
-// );
-
-const RootNavigator = createStackNavigator(
-  {
-    PushRouteOne: {
-      screen: PushRouteOne
     },
-    PushRouteTwo: {
-      screen: PushRouteTwo
+    Contacts: {
+      screen: Contacts
     }
-    //   PushRouteThree: {
-    //     screen: PushRouteThree
-    //   }
   },
   {
     mode: "modal",
     headerMode: "none",
-    initialRouteName: "PushRouteOne"
+    initialRouteName: "Contacts"
   }
 );
 

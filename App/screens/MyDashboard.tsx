@@ -28,7 +28,7 @@ const MyDashboard = () => {
     startAnimationTwo();
   });
 
-  const onSendMoneyPressed = () => navigate("SendMoney");
+  const onaddContactPressed = () => navigate("Contacts");
 
   const startAnimationTwo = () => {
     // Set animation initial values to all animated properties
@@ -356,11 +356,11 @@ const MyDashboard = () => {
                   }}
                 />
                 <TouchableOpacity
-                  onPress={onSendMoneyPressed}
-                  style={styles.sendMoneyButton}
+                  onPress={onaddContactPressed}
+                  style={styles.addContactButton}
                 >
-                  <Text style={styles.sendMoneyButtonText}>
-                    Send {"\n"}Money
+                  <Text style={styles.addContactButtonText}>
+                    Add {"\n"}Contact
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -732,11 +732,11 @@ const styles = StyleSheet.create({
     marginLeft: 11,
     marginRight: 8
   },
-  sendMoneyButtonImage: {
+  addContactButtonImage: {
     resizeMode: "contain",
     marginRight: 10
   },
-  sendMoneyButton: {
+  addContactButton: {
     backgroundColor: "transparent",
     flexDirection: "row",
     alignItems: "center",
@@ -746,7 +746,7 @@ const styles = StyleSheet.create({
     marginRight: 26,
     marginBottom: 10
   },
-  sendMoneyButtonText: {
+  addContactButtonText: {
     color: "rgb(38, 34, 105)",
     fontSize: 13,
     fontStyle: "normal",
