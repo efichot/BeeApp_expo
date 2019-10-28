@@ -10,6 +10,7 @@ import {
   View
 } from "react-native";
 import { useNavigation } from "react-navigation-hooks";
+import IconDrawer from "../components/IconDrawer";
 
 const Contacts = () => {
   const { navigate } = useNavigation();
@@ -151,7 +152,9 @@ const Contacts = () => {
               alignItems: "flex-start"
             }}
           >
-            <Text style={styles.contactsText}>Contacts</Text>
+            <IconDrawer>
+              <Text style={styles.contactsText}>Contacts</Text>
+            </IconDrawer>
             <Text style={styles.selectThemAndSendText}>
               Select them and send it
             </Text>

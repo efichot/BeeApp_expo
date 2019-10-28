@@ -9,6 +9,7 @@ import {
   View
 } from "react-native";
 import { useNavigation } from "react-navigation-hooks";
+import IconDrawer from "../components/IconDrawer";
 
 const MyDashboard = () => {
   const { navigate } = useNavigation();
@@ -26,7 +27,7 @@ const MyDashboard = () => {
 
   useEffect(() => {
     startAnimationTwo();
-  });
+  }, []);
 
   const onaddContactPressed = () => navigate("Contacts");
 
@@ -172,7 +173,9 @@ const MyDashboard = () => {
                 alignItems: "flex-start"
               }}
             >
-              <Text style={styles.dashboardCopyText}>Dashboard</Text>
+              <IconDrawer>
+                <Text style={styles.dashboardCopyText}>Dashboard</Text>
+              </IconDrawer>
               <Text style={styles.allReportsUpdatedText}>
                 All reports updated automatically
               </Text>
