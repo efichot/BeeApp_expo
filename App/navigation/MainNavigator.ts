@@ -16,7 +16,13 @@ const drawer = createDrawerNavigator(
     Contacts
   },
   {
-    drawerBackgroundColor: "rgb(27, 19, 62)"
+    drawerBackgroundColor: "rgb(27, 19, 62)",
+    drawerType: "back",
+    drawerWidth: 200,
+    contentOptions: {
+      activeTintColor: "rgb(116, 110, 145)",
+      inactiveTintColor: "rgba(116, 110, 145, 0.2)"
+    }
   }
 );
 

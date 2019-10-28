@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { useNavigation } from "react-navigation-hooks";
 import IconDrawer from "../components/IconDrawer";
+import LateralNav from "../components/LateralNav";
+import LogoutIcon from "../components/LogoutIcon";
 
 const MyDashboard = () => {
   const { navigate } = useNavigation();
@@ -148,6 +150,7 @@ const MyDashboard = () => {
             styles.headerViewAnimated
           ]}
         >
+          <LogoutIcon />
           <View style={styles.headerView}>
             <View
               pointerEvents="box-none"
@@ -181,6 +184,7 @@ const MyDashboard = () => {
               </Text>
             </View>
           </View>
+          <LateralNav />
         </Animated.View>
         <Animated.View
           style={[

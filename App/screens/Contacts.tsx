@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useNavigation } from "react-navigation-hooks";
 import IconDrawer from "../components/IconDrawer";
+import LateralNav from "../components/LateralNav";
 
 const Contacts = () => {
   const { navigate } = useNavigation();
@@ -160,6 +161,7 @@ const Contacts = () => {
             </Text>
           </View>
         </View>
+        <LateralNav />
       </Animated.View>
       <Animated.View
         style={[
@@ -258,7 +260,7 @@ const styles = StyleSheet.create({
   },
   headerViewAnimated: {
     position: "absolute",
-    left: -35,
+    left: 0,
     right: -89,
     top: 21,
     height: 120

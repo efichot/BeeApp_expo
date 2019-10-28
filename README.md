@@ -9,6 +9,6 @@ Implementation of an ultimate boilerplate with TS and expo for implementing desi
 
 # Imformations
 
-- Inside the `./platform` folder you can find the ts files specific to the platform web or mobile. (the web.ts are handle by webpack for `yarn run web` command).
+- Inside the `./app/navigation` folder you can find the ts files specific to the platform web or mobile. (the web.ts are handle by webpack for `yarn run web` command).
 - Inside the `./assets` folder the images are in 3 resolutions for targeting the different resolutions of the screens (@1x, @2x, @3x), only the images without a @ in the name are imported for the web.
-- `./platform/global.css` all the global style you want to apply for the web environment
+- `./global.css` all the global style you want to apply for the web environment

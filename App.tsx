@@ -3,8 +3,7 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import AppNavigator from "./platform/AppNavigator";
-import images from "./platform/images";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -28,8 +27,22 @@ export default function App(props) {
 }
 
 async function loadResourcesAsync() {
+  function importAll(r) {
+    return r.keys().map(r);
+  }
+
   await Promise.all([
-    Asset.loadAsync(images),
+    Asset.loadAsync(
+      Platform.OS === "web"
+        ? importAll(
+            require.context(
+              "./assets/images",
+              false,
+              /^[^@]+\.(png|jpe?g|svg)$/
+            )
+          )
+        : []
+    ),
     Font.loadAsync({
       ".AppleSystemUIFont": require("./assets/fonts/SFNSText.ttf"),
       ".SFNSDisplay": require("./assets/fonts/SFNSDisplay.ttf"),
