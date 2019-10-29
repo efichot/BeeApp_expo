@@ -10,7 +10,7 @@ const LogoutIcon: React.FC = () => {
     <View
       style={{
         position: "absolute",
-        right: 10,
+        right: 30,
         top: 10,
         zIndex: 100
       }}

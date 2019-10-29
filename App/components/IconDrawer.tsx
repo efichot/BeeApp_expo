@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { TouchableOpacity, View } from "react-native";
+import { Platform, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "react-navigation-hooks";
 import { isSmallDevice } from "../constants/layout";
 
@@ -9,7 +9,7 @@ const IconDrawer: React.FC = ({ children }) => {
 
   return (
     <View style={{ flexDirection: "row" }}>
-      {isSmallDevice && (
+      {Platform.OS === "web" && isSmallDevice && (
         <TouchableOpacity onPress={navigation.openDrawer}>
           <Ionicons
             name="md-menu"
