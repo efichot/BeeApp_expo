@@ -245,8 +245,8 @@ const Contacts = () => {
 
 Contacts.navigationOptions = {
   header: null,
-  tabBarIcon: () => {
-    return <Ionicons name="md-menu" size={32} color="white" />;
+  tabBarIcon: ({ tintColor }) => {
+    return <Ionicons name="md-contact" size={24} color={tintColor} />;
   }
 };
 

@@ -1,4 +1,4 @@
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import {
   Animated,
@@ -526,8 +526,8 @@ const MyDashboard = () => {
 
 MyDashboard.navigationOptions = {
   header: null,
-  tabBarIcon: () => {
-    return <Ionicons name="md-menu" size={32} color="white" />;
+  tabBarIcon: ({ tintColor }) => {
+    return <FontAwesome name="dashboard" size={24} color={tintColor} />;
   }
 };
 

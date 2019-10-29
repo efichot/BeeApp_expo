@@ -35,9 +35,9 @@ const tabNavigator = createMaterialBottomTabNavigator(
   },
   {
     initialRouteName: "MyDashboard",
-    activeColor: "rgb(116, 110, 145)",
-    inactiveColor: "rgba(116, 110, 145, 0.4)",
-    barStyle: { backgroundColor: "rgba(27, 19, 62, 0.7)" }
+    activeColor: "white",
+    inactiveColor: "rgb(116, 110, 145)",
+    barStyle: { backgroundColor: "rgba(27, 19, 62, 0.8)" }
   }
 );
 
@@ -54,7 +54,7 @@ const stackNavigator = createStackNavigator(
   {
     mode: "modal",
     headerMode: "none",
-    initialRouteName: "GetStarted"
+    initialRouteName: "MyDashboard"
   }
 );
 
