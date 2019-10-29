@@ -13,6 +13,7 @@ import {
 import { useNavigation } from "react-navigation-hooks";
 import IconDrawer from "../components/IconDrawer";
 import LateralNav from "../components/LateralNav";
+import LogoutIcon from "../components/LogoutIcon";
 
 const Contacts = () => {
   const { navigate } = useNavigation();
@@ -110,6 +111,7 @@ const Contacts = () => {
 
   return (
     <View style={styles.contactsView}>
+      <LogoutIcon />
       <Animated.View
         style={[
           {
