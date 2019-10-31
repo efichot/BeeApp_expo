@@ -3,6 +3,7 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
+import "./app/config/firebase";
 import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App(props) {
