@@ -15,6 +15,7 @@ const LateralNav: React.FC = () => {
         <TouchableOpacity
           onPress={() => navigate(route)}
           disabled={routeName === route}
+          key={route}
         >
           <Text style={routeName === route ? styles.itemActive : styles.item}>
             {route}

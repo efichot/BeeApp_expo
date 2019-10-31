@@ -9,6 +9,7 @@ npm-debug.*
 *.orig.*
 web-build/
 web-report/
+register-service-worker.js
 
 # macOS
 .DS_Store

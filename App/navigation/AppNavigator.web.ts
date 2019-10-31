@@ -1,12 +1,5 @@
 import { createBrowserApp } from "@react-navigation/web";
-import { createSwitchNavigator } from "react-navigation";
 import "./../../global.css";
-import MainNavigator from "./MainNavigator";
+import Navigator from "./Navigator";
 
-const switchNavigator: any = createSwitchNavigator({
-  Main: MainNavigator
-});
-
-switchNavigator.path = "";
-
-export default createBrowserApp(switchNavigator);
+export default createBrowserApp(Navigator);
