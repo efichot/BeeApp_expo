@@ -21,7 +21,8 @@
     "react-native-web": "^0.11.7",
     "react-navigation": "^3.12.0",
     "react-navigation-hooks": "^1.1.0",
-    "react-navigation-material-bottom-tabs": "^2.1.5"
+    "react-navigation-material-bottom-tabs": "^2.1.5",
+    "serve": "^11.2.0"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
