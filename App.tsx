@@ -3,8 +3,8 @@ import { Asset } from "expo-asset";
 import * as Font from "expo-font";
 import React, { useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
-import "./app/config/firebase";
-import AppNavigator from "./app/navigation/AppNavigator";
+import "./App/config/firebase";
+import AppNavigator from "./App/navigation/AppNavigator";
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);

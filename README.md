@@ -2,7 +2,7 @@
 
 Implementation of an ultimate boilerplate with TS and expo for implementing design from supernova studio.
 
-![image](https://cdn1.imggmi.com/uploads/2019/10/22/71b321d4549897b285f33a0c29c92534-full.png)
+![Screenshot 2020-02-13 at 15 57 38](https://user-images.githubusercontent.com/16935590/74417952-2dd2fc80-4e7a-11ea-9c74-d10a1093af90.png)
 
 - Download
   [project.sketch](https://drive.google.com/file/d/18XzTUq8MnbdSvq0alVoHcUcTes3IQ2WQ/view)
