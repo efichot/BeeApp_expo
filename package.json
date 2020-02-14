@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo/vector-icons": "^10.0.6",
     "@react-navigation/web": "^1.0.0-alpha.9",
+    "electron": "^6.0.12",
     "expo": "^36.0.0",
     "firebase": "^7.8.2",
     "react": "~16.12.0",
@@ -24,6 +25,8 @@
     "react-navigation-material-bottom-tabs": "^2.1.5"
   },
   "devDependencies": {
+    "@expo/electron-adapter": "^0.0.0-alpha.20",
+    "@expo/webpack-config": "^0.11.1",
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.61.14",
     "@types/webpack-env": "^1.14.1",

@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { AppLoading } from "expo";
 import { Asset } from "expo-asset";
 import * as Font from "expo-font";
@@ -45,6 +46,7 @@ async function loadResourcesAsync() {
         : []
     ),
     Font.loadAsync({
+      ...Ionicons.font,
       ".AppleSystemUIFont": require("./assets/fonts/SFNSText.ttf"),
       ".SFNSDisplay": require("./assets/fonts/SFNSDisplay.ttf"),
       "Montserrat-Light": require("./assets/fonts/Montserrat-Light.ttf"),

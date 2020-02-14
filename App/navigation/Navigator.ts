@@ -13,6 +13,13 @@ import SignIn from "../screens/SignIn";
 import SignUp from "../screens/SignUp";
 import SuccessSignIn from "../screens/SuccessSignIn";
 
+const authNavigation = {
+  GetStarted,
+  SignUp,
+  SignIn,
+  SuccessSignIn
+};
+
 const appNavigation = {
   MyDashboard,
   Contacts
@@ -25,7 +32,8 @@ const drawer = createDrawerNavigator(appNavigation, {
   contentOptions: {
     activeTintColor: "rgb(116, 110, 145)",
     inactiveTintColor: "rgba(116, 110, 145, 0.4)"
-  }
+  },
+  initialRouteName: "MyDashboard"
 });
 
 const tabNavigator = createMaterialBottomTabNavigator(appNavigation, {
@@ -35,39 +43,20 @@ const tabNavigator = createMaterialBottomTabNavigator(appNavigation, {
   barStyle: { backgroundColor: "rgba(27, 19, 62, 0.8)" }
 });
 
-const stackNavigatorAuth = createStackNavigator(
-  {
-    GetStarted,
-    SignUp,
-    SignIn,
-    SuccessSignIn
-  },
-  {
-    mode: "modal",
-    headerMode: "none",
-    initialRouteName: "GetStarted"
-  }
-);
-
-const stackNavigatorApp = createStackNavigator(
-  {
-    Navigation: Platform.OS === "web" ? drawer : tabNavigator
-  },
-  {
-    mode: "modal",
-    headerMode: "none",
-    initialRouteName: "Navigation"
-  }
-);
+const stackNavigatorAuth = createStackNavigator(authNavigation, {
+  mode: "modal",
+  headerMode: "none",
+  initialRouteName: "GetStarted"
+});
 
 const Navigator: any = createSwitchNavigator(
   {
     Auth: createAppContainer(stackNavigatorAuth),
-    App: createAppContainer(stackNavigatorApp)
+    App: createAppContainer(Platform.OS === "web" ? drawer : tabNavigator)
   },
   { initialRouteName: "Auth" }
 );
 
 Navigator.path = "";
 
-export default Navigator;
+export { appNavigation, Navigator };
