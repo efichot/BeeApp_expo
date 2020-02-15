@@ -10,6 +10,7 @@ npm-debug.*
 web-build/
 web-report/
 register-service-worker.js
+.firebase
 
 # macOS
 .DS_Store
