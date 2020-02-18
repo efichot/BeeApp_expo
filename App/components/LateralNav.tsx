@@ -2,12 +2,11 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation, useNavigationState } from "react-navigation-hooks";
 import { isSmallDevice } from "../constants/layout";
-import { appNavigation } from "../navigation/Navigator";
 
 const LateralNav: React.FC = () => {
   const { navigate } = useNavigation();
   const { routeName } = useNavigationState();
-  const navBar = Object.keys(appNavigation);
+  const navBar = ["MyDashboard", "Contacts"];
 
   if (isSmallDevice) return null;
   return (

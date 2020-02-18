@@ -13,6 +13,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.efichot.beeapp",
+      "googleServicesFile": "./google-services.json"
     }
   }
 }

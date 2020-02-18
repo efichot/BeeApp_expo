@@ -59,4 +59,4 @@ const Navigator: any = createSwitchNavigator(
 
 Navigator.path = "";
 
-export { appNavigation, Navigator };
+export default Navigator;
