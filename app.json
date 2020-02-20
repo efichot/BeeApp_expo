@@ -2,6 +2,7 @@
   "expo": {
     "name": "BeeApp",
     "slug": "BeeApp",
+    "owner": "efichot",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
@@ -17,6 +18,18 @@
     "android": {
       "package": "com.efichot.beeapp",
       "googleServicesFile": "./google-services.json"
+    },
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyBp5oFIC08_p4dH3stTTkEmGBX88Wfuk9Y",
+        "authDomain": "beeapp2-e12d0.firebaseapp.com",
+        "databaseURL": "https://beeapp2-e12d0.firebaseio.com",
+        "projectId": "beeapp2-e12d0",
+        "storageBucket": "beeapp2-e12d0.appspot.com",
+        "messagingSenderId": "78138540547",
+        "appId": "1:78138540547:web:8e4dd34a751401f6de0436",
+        "measurementId": "G-G3XC3Q15FY"
+      }
     }
   }
 }

@@ -1,14 +1,27 @@
 import { Ionicons } from "@expo/vector-icons";
-import { AppLoading } from "expo";
+import { AppLoading, Notifications } from "expo";
 import { Asset } from "expo-asset";
 import * as Font from "expo-font";
-import React, { useState } from "react";
+import * as Permissions from "expo-permissions";
+import React, { useEffect, useState } from "react";
 import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import "./App/config/firebase";
 import AppNavigator from "./App/navigation/AppNavigator";
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
+  useEffect(() => {
+    async function registerForPushNotificationsAsync() {
+      const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+      if (status !== "granted") {
+        alert("No notification permissions!");
+        return;
+      }
+      let token = await Notifications.getExpoPushTokenAsync();
+      console.log("TCL: registerForPushNotificationsAsync -> token", token);
+    }
+    Platform.OS !== "web" && registerForPushNotificationsAsync();
+  }, []);
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
