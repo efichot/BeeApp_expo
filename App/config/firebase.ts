@@ -3,7 +3,7 @@ import firebase from "firebase";
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/functions";
-import "firebase/messaging";
+// import "firebase/messaging";
 import "firebase/storage";
 
 const firebaseConfig = {
@@ -28,29 +28,29 @@ const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 const db = firebase.firestore();
 
 // FCM
-const messaging = firebase.messaging();
+// const messaging = firebase.messaging();
 
-messaging
-  .requestPermission()
-  .then(() => {
-    console.log("Have Permission");
-    return messaging.getToken();
-  })
-  .then(token => {
-    console.log(token);
-  })
-  .catch(() => console.log("Error Occured"));
+// messaging
+//   .requestPermission()
+//   .then(() => {
+//     console.log("Have Permission");
+//     return messaging.getToken();
+//   })
+//   .then(token => {
+//     console.log(token);
+//   })
+//   .catch(() => console.log("Error Occured"));
 
-messaging.onMessage(payload => {
-  console.log("Message received. ", payload);
-});
+// messaging.onMessage(payload => {
+//   console.log("Message received. ", payload);
+// });
 
 export {
   firebase,
   db,
   auth,
   storage,
-  messaging,
+  // messaging,
   functions,
   // analytics,
   googleAuthProvider
