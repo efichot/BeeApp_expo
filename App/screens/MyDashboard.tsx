@@ -1,4 +1,3 @@
-import { FontAwesome } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import {
   Animated,
@@ -520,12 +519,6 @@ const MyDashboard = ({ navigation }) => {
       </Animated.View>
     </View>
   );
-};
-
-MyDashboard.navigationOptions = {
-  tabBarIcon: ({ tintColor }) => {
-    return <FontAwesome name="dashboard" size={24} color={tintColor} />;
-  }
 };
 
 export default MyDashboard;

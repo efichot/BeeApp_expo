@@ -1,4 +1,3 @@
-import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect } from "react";
 import {
   Animated,
@@ -241,12 +240,6 @@ const Contacts = ({ navigation }) => {
       </Animated.View>
     </View>
   );
-};
-
-Contacts.navigationOptions = {
-  tabBarIcon: ({ tintColor }) => {
-    return <Ionicons name="md-contact" size={24} color={tintColor} />;
-  }
 };
 
 export default Contacts;

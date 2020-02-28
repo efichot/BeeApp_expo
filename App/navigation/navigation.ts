@@ -27,11 +27,13 @@ const authNavigation = [
 const appNavigation = [
   {
     name: "MyDashboard",
-    component: MyDashboard
+    component: MyDashboard,
+    icon: "view-dashboard"
   },
   {
     name: "Contacts",
-    component: Contacts
+    component: Contacts,
+    icon: "contacts"
   }
 ];
 
