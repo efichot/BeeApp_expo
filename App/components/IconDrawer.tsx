@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
+import { DrawerActions, useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Platform, TouchableOpacity, View } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 import { isSmallDevice } from "../constants/layout";
 
 const IconDrawer: React.FC = ({ children }) => {
@@ -10,7 +10,9 @@ const IconDrawer: React.FC = ({ children }) => {
   return (
     <View style={{ flexDirection: "row" }}>
       {Platform.OS === "web" && isSmallDevice && (
-        <TouchableOpacity onPress={navigation.openDrawer}>
+        <TouchableOpacity
+          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+        >
           <Ionicons
             name="md-menu"
             size={32}

@@ -1,10 +1,10 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 
 const LogoutIcon: React.FC = () => {
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   return (
     <View
@@ -15,7 +15,7 @@ const LogoutIcon: React.FC = () => {
         zIndex: 100
       }}
     >
-      <TouchableOpacity onPress={() => navigate("GetStarted")}>
+      <TouchableOpacity onPress={() => navigation.navigate("GetStarted")}>
         <Ionicons name="ios-power" size={32} color="white" />
       </TouchableOpacity>
     </View>

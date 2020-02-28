@@ -1,24 +1,24 @@
+import { useNavigation, useRoute } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { useNavigation, useNavigationState } from "react-navigation-hooks";
 import { isSmallDevice } from "../constants/layout";
 
 const LateralNav: React.FC = () => {
-  const { navigate } = useNavigation();
-  const { routeName } = useNavigationState();
+  const navigation = useNavigation();
+  const route = useRoute();
   const navBar = ["MyDashboard", "Contacts"];
 
   if (isSmallDevice) return null;
   return (
     <View style={styles.nav}>
-      {navBar.map(route => (
+      {navBar.map(name => (
         <TouchableOpacity
-          onPress={() => navigate(route)}
-          disabled={routeName === route}
-          key={route}
+          onPress={() => navigation.navigate(name)}
+          disabled={route.name === name}
+          key={name}
         >
-          <Text style={routeName === route ? styles.itemActive : styles.item}>
-            {route}
+          <Text style={route.name === name ? styles.itemActive : styles.item}>
+            {name}
           </Text>
         </TouchableOpacity>
       ))}

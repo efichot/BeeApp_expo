@@ -9,13 +9,11 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 import IconDrawer from "../components/IconDrawer";
 import LateralNav from "../components/LateralNav";
 import LogoutIcon from "../components/LogoutIcon";
 
-const MyDashboard = () => {
-  const { navigate } = useNavigation();
+const MyDashboard = ({ navigation }) => {
   const headerViewTranslateY = new Animated.Value(-1);
   const headerViewOpacity = new Animated.Value(-1);
   const cardViewTranslateY = new Animated.Value(-1);
@@ -32,7 +30,7 @@ const MyDashboard = () => {
     startAnimationTwo();
   }, []);
 
-  const onaddContactPressed = () => navigate("Contacts");
+  const onaddContactPressed = () => navigation.navigate("Contacts");
 
   const startAnimationTwo = () => {
     // Set animation initial values to all animated properties
@@ -525,7 +523,6 @@ const MyDashboard = () => {
 };
 
 MyDashboard.navigationOptions = {
-  header: null,
   tabBarIcon: ({ tintColor }) => {
     return <FontAwesome name="dashboard" size={24} color={tintColor} />;
   }

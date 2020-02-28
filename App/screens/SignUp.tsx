@@ -9,10 +9,8 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 
-const SignUp = () => {
-  const { navigate } = useNavigation();
+const SignUp = ({ navigation }) => {
   const appLogoViewScale = new Animated.Value(-1);
   const usernameViewTranslateY = new Animated.Value(-1);
   const usernameViewOpacity = new Animated.Value(-1);
@@ -32,11 +30,11 @@ const SignUp = () => {
   }, []);
 
   const onBtnGetStartedPressed = () => {
-    navigate("MyDashboard");
+    navigation.navigate("App");
   };
 
   const onBtnGetStartedTwoPressed = () => {
-    navigate("SignIn");
+    navigation.navigate("SignIn");
   };
 
   const onBtnGetStartedThreePressed = () => {};
@@ -372,11 +370,6 @@ const SignUp = () => {
     </View>
   );
 };
-
-SignUp.navigationOptions = {
-  header: null
-};
-
 export default SignUp;
 
 const styles = StyleSheet.create({

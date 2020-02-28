@@ -10,13 +10,11 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 import IconDrawer from "../components/IconDrawer";
 import LateralNav from "../components/LateralNav";
 import LogoutIcon from "../components/LogoutIcon";
 
-const Contacts = () => {
-  const { navigate } = useNavigation();
+const Contacts = ({ navigation }) => {
   const headerViewTranslateY = new Animated.Value(-1);
   const headerViewOpacity = new Animated.Value(-1);
   const friendsScrollViewTranslateY = new Animated.Value(-1);
@@ -70,7 +68,7 @@ const Contacts = () => {
   }, []);
 
   const onBtnSendPressed = () => {
-    navigate("MyDashboard");
+    navigation.navigate("MyDashboard");
   };
 
   const startAnimationOne = () => {
@@ -246,7 +244,6 @@ const Contacts = () => {
 };
 
 Contacts.navigationOptions = {
-  header: null,
   tabBarIcon: ({ tintColor }) => {
     return <Ionicons name="md-contact" size={24} color={tintColor} />;
   }

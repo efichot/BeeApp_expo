@@ -8,10 +8,8 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 
-const GetStarted = () => {
-  const { navigate } = useNavigation();
+const GetStarted = ({ navigation }) => {
   const appLogoViewTranslateY = new Animated.Value(-1);
   const appLogoViewOpacity = new Animated.Value(-1);
   const sendMoneyToFriendTextTranslateY = new Animated.Value(-1);
@@ -23,7 +21,7 @@ const GetStarted = () => {
     startAnimationOne();
   }, []);
 
-  const onBtnGetStartedPressed = () => navigate("SignIn");
+  const onBtnGetStartedPressed = () => navigation.navigate("SignIn");
 
   const startAnimationOne = () => {
     // Set animation initial values to all animated properties
@@ -162,10 +160,6 @@ const GetStarted = () => {
       </Animated.View>
     </View>
   );
-};
-
-GetStarted.navigationOptions = {
-  header: null
 };
 
 export default GetStarted;

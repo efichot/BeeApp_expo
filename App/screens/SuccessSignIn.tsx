@@ -8,10 +8,8 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { useNavigation } from "react-navigation-hooks";
 
-const SuccessSignIn = () => {
-  const { navigate } = useNavigation();
+const SuccessSignIn = ({ navigation }) => {
   const viewViewTranslateY = new Animated.Value(-1);
   const viewViewOpacity = new Animated.Value(-1);
   const iconUserViewTranslateY = new Animated.Value(-1);
@@ -23,7 +21,7 @@ const SuccessSignIn = () => {
     startAnimationOne();
   }, []);
 
-  const onBtnDashboardPressed = () => navigate("MyDashboard");
+  const onBtnDashboardPressed = () => navigation.navigate("MyDashboard");
 
   const startAnimationOne = () => {
     // Set animation initial values to all animated properties
@@ -162,10 +160,6 @@ const SuccessSignIn = () => {
       </Animated.View>
     </View>
   );
-};
-
-SuccessSignIn.navigationOptions = {
-  header: null
 };
 
 export default SuccessSignIn;
