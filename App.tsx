@@ -9,15 +9,15 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import Navigator from "./App/navigation/Navigator";
 import useLinking from "./App/navigation/useLinking";
 
+function importAll(r) {
+  return r.keys().map(r);
+}
+
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
   const [initialNavigationState, setInitialNavigationState] = React.useState();
   const containerRef = React.useRef();
   const { getInitialState } = useLinking(containerRef);
-
-  function importAll(r) {
-    return r.keys().map(r);
-  }
 
   // Load any resources or data that we need prior to rendering the app
   React.useEffect(() => {

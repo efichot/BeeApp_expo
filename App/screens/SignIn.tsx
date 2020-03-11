@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Animated,
   Easing,
@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
+import { auth } from "../config/firebase";
 
 const SignIn = ({ navigation }) => {
   const appLogoViewScale = new Animated.Value(-1);
@@ -20,13 +21,22 @@ const SignIn = ({ navigation }) => {
   const passwordViewOpacity = new Animated.Value(-1);
   const btnSignUpButtonTranslateY = new Animated.Value(-1);
   const btnSignUpButtonOpacity = new Animated.Value(-1);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     startAnimationOne();
   }, []);
 
-  const onBtnGetStartedPressed = () => {
-    navigation.navigate("App");
+  const onBtnGetStartedPressed = async () => {
+    try {
+      const user = await auth.signInWithEmailAndPassword(email, password);
+      console.log("onBtnGetStartedPressed -> user", user);
+
+      navigation.navigate("App");
+    } catch (error) {
+      console.log("onBtnGetStartedPressed -> error", error);
+    }
   };
 
   const onBtnGetStartedTwoPressed = () => {
@@ -166,6 +176,8 @@ const SignIn = ({ navigation }) => {
             <TextInput
               autoCorrect={false}
               placeholder="a@bcd.com"
+              value={email}
+              onChangeText={text => setEmail(text)}
               style={styles.aBcdComTextInput}
             />
           </View>
@@ -203,7 +215,9 @@ const SignIn = ({ navigation }) => {
             <View style={styles.rectangleTwoView} />
             <TextInput
               autoCorrect={false}
-              placeholder="iscomicsansgood"
+              placeholder="password"
+              value={password}
+              onChangeText={text => setPassword(text)}
               secureTextEntry={true}
               style={styles.iscomicsansgoodTextInput}
             />
