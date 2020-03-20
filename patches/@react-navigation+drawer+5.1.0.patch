@@ -1,0 +1,50 @@
+diff --git a/node_modules/@react-navigation/drawer/lib/module/index.js b/node_modules/@react-navigation/drawer/lib/module/index.js
+index e94ffda..64f869d 100644
+--- a/node_modules/@react-navigation/drawer/lib/module/index.js
++++ b/node_modules/@react-navigation/drawer/lib/module/index.js
+@@ -3,23 +3,20 @@
+  */
+ export { default as createDrawerNavigator } from './navigators/createDrawerNavigator';
+ /**
+- * Views
++ * Typess
+  */
+-
+-export { default as DrawerView } from './views/DrawerView';
+-export { default as DrawerItem } from './views/DrawerItem';
+-export { default as DrawerItemList } from './views/DrawerItemList';
+-export { default as DrawerContent } from './views/DrawerContent';
+-export { default as DrawerContentScrollView } from './views/DrawerContentScrollView';
++export { DrawerContentComponentProps, DrawerContentOptions, DrawerNavigationOptions, DrawerNavigationProp } from './types';
+ /**
+  * Utilities
+  */
+-
+ export { default as DrawerGestureContext } from './utils/DrawerGestureContext';
+ export { default as useIsDrawerOpen } from './utils/useIsDrawerOpen';
++export { default as DrawerContent } from './views/DrawerContent';
++export { default as DrawerContentScrollView } from './views/DrawerContentScrollView';
++export { default as DrawerItem } from './views/DrawerItem';
++export { default as DrawerItemList } from './views/DrawerItemList';
+ /**
+- * Types
++ * Views
+  */
+-
+-export { DrawerNavigationOptions, DrawerNavigationProp, DrawerContentOptions, DrawerContentComponentProps } from './types';
++export { default as DrawerView } from './views/DrawerView';
+ //# sourceMappingURL=index.js.map
+\ No newline at end of file
+diff --git a/node_modules/@react-navigation/drawer/lib/module/views/DrawerView.js b/node_modules/@react-navigation/drawer/lib/module/views/DrawerView.js
+index b24cbb4..03fc14e 100644
+--- a/node_modules/@react-navigation/drawer/lib/module/views/DrawerView.js
++++ b/node_modules/@react-navigation/drawer/lib/module/views/DrawerView.js
+@@ -160,7 +160,7 @@ export default function DrawerView(_ref2) {
+       return React.createElement(ResourceSavingScene, {
+         key: route.key,
+         style: [StyleSheet.absoluteFill, {
+-          opacity: isFocused ? 1 : 0
++          opacity: 1
+         }],
+         isVisible: isFocused
+       }, descriptor.render());

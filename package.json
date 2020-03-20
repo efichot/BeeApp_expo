@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "deploy": "expo build:web && firebase deploy --only hosting",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.6",
@@ -41,6 +42,8 @@
     "@types/react-native": "~0.61.14",
     "@types/webpack-env": "^1.14.1",
     "babel-preset-expo": "~8.0.0",
+    "patch-package": "^6.2.1",
+    "postinstall-postinstall": "^2.0.0",
     "typescript": "^3.7.5"
   },
   "private": true
